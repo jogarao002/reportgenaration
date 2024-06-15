@@ -17,7 +17,7 @@
 	</div>
 	
 	<div class="container p-2">
-		<form:form modelAttribute="search" action="" method="post" >
+		<form:form action="/search" modelAttribute="search" method="POST" >
 			<table>
 				<tr>
 					<td>Choose a plan:</td>
@@ -45,6 +45,7 @@
 					<td><form:input class="datepicker" type="date" data-date-format="mm/dd/yyyy" path="planEndDate" /></td>
 				</tr>
 				<tr>
+					<td><a href = "/" class="btn btn-primary" >Reset</a></td>
 					<td><input type="submit" value="search" class="btn btn-primary" /></td>
 				</tr>
 
@@ -86,8 +87,8 @@
 			</tbody>
 		</table>
 		<hr />
-		Export: <a class="p-1 rounded" href="#" style="text-decoration: none">excel</a>
-		&nbsp; <a class="p-1 rounded" href="#" style="text-decoration: none">pdf</a>
+		Export: <a class="p-1 rounded" href="excel" style="text-decoration: none">excel</a>
+		&nbsp; <a class="p-1 rounded" href="pdf" style="text-decoration: none">pdf</a>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">

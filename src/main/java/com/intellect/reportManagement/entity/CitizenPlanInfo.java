@@ -1,5 +1,7 @@
 package com.intellect.reportManagement.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,15 +23,15 @@ public class CitizenPlanInfo {
 
 	private String citizenPlanStatus;
 
-	private String citizenPlanStartDate;
+	private LocalDate citizenPlanStartDate;
 
-	private String citizenPlanEndDate;
+	private LocalDate citizenPlanEndDate;
 
 	private String citizenDenailReason;
 
 	private String citizenTerminateReason;
 
-	private String citizenTerminationDate;
+	private LocalDate citizenTerminationDate;
 
 	private Double citizenBenfitedAmount;
 
@@ -73,19 +75,19 @@ public class CitizenPlanInfo {
 		this.citizenPlanStatus = citizenPlanStatus;
 	}
 
-	public String getCitizenPlanStartDate() {
+	public LocalDate getCitizenPlanStartDate() {
 		return citizenPlanStartDate;
 	}
 
-	public void setCitizenPlanStartDate(String citizenPlanStartDate) {
+	public void setCitizenPlanStartDate(LocalDate citizenPlanStartDate) {
 		this.citizenPlanStartDate = citizenPlanStartDate;
 	}
 
-	public String getCitizenPlanEndDate() {
+	public LocalDate getCitizenPlanEndDate() {
 		return citizenPlanEndDate;
 	}
 
-	public void setCitizenPlanEndDate(String citizenPlanEndDate) {
+	public void setCitizenPlanEndDate(LocalDate citizenPlanEndDate) {
 		this.citizenPlanEndDate = citizenPlanEndDate;
 	}
 
@@ -105,11 +107,11 @@ public class CitizenPlanInfo {
 		this.citizenTerminateReason = citizenTerminateReason;
 	}
 
-	public String getCitizenTerminationDate() {
+	public LocalDate getCitizenTerminationDate() {
 		return citizenTerminationDate;
 	}
 
-	public void setCitizenTerminationDate(String citizenTerminationDate) {
+	public void setCitizenTerminationDate(LocalDate citizenTerminationDate) {
 		this.citizenTerminationDate = citizenTerminationDate;
 	}
 
@@ -120,7 +122,7 @@ public class CitizenPlanInfo {
 	public void setCitizenBenfitedAmount(Double citizenBenfitedAmount) {
 		this.citizenBenfitedAmount = citizenBenfitedAmount;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "CitizenPlanInfo [citizenId=" + citizenId + ", citizenName=" + citizenName + ", citizenGender="
@@ -128,6 +130,16 @@ public class CitizenPlanInfo {
 				+ ", citizenPlanStartDate=" + citizenPlanStartDate + ", citizenPlanEndDate=" + citizenPlanEndDate
 				+ ", citizenDenailReason=" + citizenDenailReason + ", citizenTerminateReason=" + citizenTerminateReason
 				+ ", citizenTerminationDate=" + citizenTerminationDate + ", citizenBenfitedAmount="
-				+ citizenBenfitedAmount + "]";
+				+ citizenBenfitedAmount + ", getCitizenId()=" + getCitizenId() + ", getCitizenName()="
+				+ getCitizenName() + ", getCitizenGender()=" + getCitizenGender() + ", getCitizenPlanName()="
+				+ getCitizenPlanName() + ", getCitizenPlanStatus()=" + getCitizenPlanStatus()
+				+ ", getCitizenPlanStartDate()=" + getCitizenPlanStartDate() + ", getCitizenPlanEndDate()="
+				+ getCitizenPlanEndDate() + ", getCitizenDenailReason()=" + getCitizenDenailReason()
+				+ ", getCitizenTerminateReason()=" + getCitizenTerminateReason() + ", getCitizenTerminationDate()="
+				+ getCitizenTerminationDate() + ", getCitizenBenfitedAmount()=" + getCitizenBenfitedAmount()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
+	
 }
