@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -15,9 +16,9 @@
 	<div class="container p-2">
 		<h2>Insurance Report Generation</h2>
 	</div>
-	
+
 	<div class="container p-2">
-		<form:form action="/search" modelAttribute="search" method="POST" >
+		<form:form action="/search" modelAttribute="search" method="POST">
 			<table>
 				<tr>
 					<td>Choose a plan:</td>
@@ -40,13 +41,16 @@
 
 				<tr>
 					<td>Choose a plan start date:</td>
-					<td><form:input class="datepicker" type="date" data-date-format="mm/dd/yyyy" path="planStartDate" /></td>
+					<td><form:input class="datepicker" type="date"
+							data-date-format="mm/dd/yyyy" path="planStartDate" /></td>
 					<td>Choose a plan end date:</td>
-					<td><form:input class="datepicker" type="date" data-date-format="mm/dd/yyyy" path="planEndDate" /></td>
+					<td><form:input class="datepicker" type="date"
+							data-date-format="mm/dd/yyyy" path="planEndDate" /></td>
 				</tr>
 				<tr>
-					<td><a href = "/" class="btn btn-primary" >Reset</a></td>
-					<td><input type="submit" value="search" class="btn btn-primary" /></td>
+					<td><a href="/" class="btn btn-primary">Reset</a></td>
+					<td><input type="submit" value="search"
+						class="btn btn-primary" /></td>
 				</tr>
 
 			</table>
@@ -69,6 +73,12 @@
 				</tr>
 			</thead>
 			<tbody>
+				<c:if test="${empty allList}">
+					<tr>
+						<td colspan="11" style="text-align: center">No records found</td>
+					</tr>
+				</c:if>
+
 				<c:forEach items="${allList}" var="citizen" varStatus="index">
 					<tr>
 						<td>${index.count}</td>
@@ -83,12 +93,15 @@
 						<td>${citizen.citizenTerminationDate}</td>
 						<td>${citizen.citizenBenfitedAmount}</td>
 					</tr>
+
 				</c:forEach>
+
 			</tbody>
 		</table>
 		<hr />
-		Export: <a class="p-1 rounded" href="excel" style="text-decoration: none">excel</a>
-		&nbsp; <a class="p-1 rounded" href="pdf" style="text-decoration: none">pdf</a>
+		Export: <a class="p-1 rounded" href="excel"
+			style="text-decoration: none">excel</a> &nbsp; <a class="p-1 rounded"
+			href="pdf" style="text-decoration: none">pdf</a>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">

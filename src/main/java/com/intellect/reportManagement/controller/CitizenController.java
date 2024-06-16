@@ -34,8 +34,8 @@ public class CitizenController {
 	public void exportExcel(HttpServletResponse response) throws Exception {
 		
 		response.setContentType("application/octet-stream");
-		response.setHeader("Content-Disposition", "attachment;filename=plans.xlsx");
-		citizenService.exportEmail(response);
+		response.setHeader("Content-Disposition", "attachment;filename=plans.xls");
+		citizenService.exportExcel(response);
 	}
 	
 	@GetMapping("/pdf")
